@@ -1,0 +1,3 @@
+if [ -f Brewfile ];then
+  brew bundle install --file=Brewfile
+fi
