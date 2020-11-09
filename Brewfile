@@ -330,8 +330,6 @@ tap 'buo/cask-upgrade'
 
 
 ### Terraform {{{
-  # Tool to build, change, and version infrastructure
-  brew 'terraform'
   # Tool to generate documentation from Terraform modules
   brew 'terraform-docs'
   # Thin wrapper for Terraform e.g. for locking state
@@ -339,7 +337,9 @@ tap 'buo/cask-upgrade'
   # Terraform linter for detecting errors that can not be detected by `terraform plan`
   tap 'wata727/tflint'
   brew 'tflint'
+  # Terraform static analysis tool
   brew 'tfsec'
+  # Terraform version manager
   brew 'tfenv'
 ### }}}
 
