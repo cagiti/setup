@@ -121,6 +121,8 @@ tap 'buo/cask-upgrade'
   brew 'telnet'
   # Graphical network analyzer and capture tool
   brew 'wireshark'
+  # Utility to display the output from any script or program in the menu bar
+  cask 'bitbar'
 ### }}}
 
 
