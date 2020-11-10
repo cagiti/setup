@@ -45,8 +45,6 @@ tap 'buo/cask-upgrade'
   brew 'libvterm'
   # YAML Parser
   brew 'libyaml'
-  # Library for a binary-based efficient data interchange format
-  brew 'msgpack'
   # Text-based UI library
   brew 'ncurses'
   # Low-level cryptographic library
@@ -185,7 +183,7 @@ tap 'buo/cask-upgrade'
   ## Java
   # Java Standard Edition Development Kit 12
   # INFO: Need to reboot
-  cask 'java'
+  # cask 'java'
   # An open and reproducible build & test system for OpenJDK
   # INFO: Need to install OpenJDK 8
   cask 'adoptopenjdk8'
@@ -338,8 +336,6 @@ tap 'buo/cask-upgrade'
 ### Terraform {{{
   # Tool to generate documentation from Terraform modules
   brew 'terraform-docs'
-  # Thin wrapper for Terraform e.g. for locking state
-  brew 'terragrunt'
   # Terraform linter for detecting errors that can not be detected by `terraform plan`
   tap 'wata727/tflint'
   brew 'tflint'
