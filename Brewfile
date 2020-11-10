@@ -139,7 +139,7 @@ tap 'buo/cask-upgrade'
   brew 'coreutils'
   # Command-line fuzzy finder written in Go
   brew 'fzf'
-  
+
   ## Compress/Uncompress
   # 7-Zip (high compression file archiver) implementation
   brew 'p7zip'
@@ -300,7 +300,11 @@ tap 'buo/cask-upgrade'
   brew 'k9s'
   # Package manager for kubectl plugins
   brew 'krew'
-  
+  # Tool that can switch between kubectl contexts
+  brew 'kubectx'
+  # Jenkins-X cli
+  brew 'jenkins-x/jx/jx'
+
 # Tool for repeatable Kubernetes development
   brew 'skaffold'
   # Kubernetes log viewer
@@ -349,7 +353,7 @@ tap 'buo/cask-upgrade'
   brew 'awscli'
   brew 'awslogs'
   brew 'aws-iam-authenticator'
-### }}}  
+### }}}
 
 
 ### Cryptography {{{
