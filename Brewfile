@@ -348,6 +348,7 @@ tap 'buo/cask-upgrade'
 ### cloud cli binaries {{{
   brew 'awscli'
   brew 'awslogs'
+  brew 'aws-iam-authenticator'
 ### }}}  
 
 
