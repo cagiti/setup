@@ -6,6 +6,7 @@ setup: brewfile configure
 .PHONY: brewfile
 brewfile:
 	if [ -f Brewfile ]; then \
+		brew update; \
 		brew bundle install --file=Brewfile; \
 	fi;
 
