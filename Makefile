@@ -10,7 +10,7 @@ brewfile:
 	fi;
 
 .PHONY: configure
-configure: python-install oh-my-zsh
+configure: python-install oh-my-zsh dotfiles
 
 .PHONY: python-install
 python-install:
