@@ -43,5 +43,5 @@ fi
 # set xdg data dirs for dmenu to source
 export XDG_DATA_DIRS=/usr/share/
 export ZSH="$(realpath ~)/.oh-my-zsh"
-export ZSH_THEME="/usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme"
+export ZSH_THEME="robbyrussell"
 export ZSH_TMUX_AUTOSTART=true

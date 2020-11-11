@@ -5,11 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-case $- in
-	*i*) ;;
-	*) return;;
-esac
-
 for file in ~/.{aliases,functions,path,dockerfunc,exports}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
@@ -37,7 +32,7 @@ fi
 
 ## completions
 # jx command completion
-if [ command -v jx ]
+if [ $(command -v jx) ]
 then
   source <(jx completion zsh)
 fi
