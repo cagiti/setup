@@ -6,11 +6,18 @@ setup: brewfile configure
 .PHONY: brewfile
 brewfile:
 	if [ -f Brewfile ]; then \
+		brew update; \
 		brew bundle install --file=Brewfile; \
 	fi;
 
 .PHONY: configure
 configure: python-install oh-my-zsh dotfiles
+
+.PHONY: check
+check:
+	if [ -f Brewfile ]; then \
+		brew bundle check --file=Brewfile; \
+	fi;
 
 .PHONY: python-install
 python-install:
