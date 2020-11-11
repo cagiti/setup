@@ -177,6 +177,8 @@ tap 'buo/cask-upgrade'
   ## Python
   # Python3
   brew 'python'
+  # Python version management
+  brew 'pyenv'
   # Python dependency management tool
   brew 'pipenv'
 
