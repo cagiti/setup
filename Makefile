@@ -12,6 +12,12 @@ brewfile:
 .PHONY: configure
 configure: python-install oh-my-zsh dotfiles
 
+.PHONY: check
+check:
+	if [ -f Brewfile ]; then \
+		brew bundle check --file=Brewfile; \
+	fi;
+
 .PHONY: python-install
 python-install:
 	pip3 install boto3 boto botocore python-dateutil pyhcl grep --user
