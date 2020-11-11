@@ -10,7 +10,7 @@ brewfile:
 	fi;
 
 .PHONY: configure
-configure: python-install
+configure: python-install oh-my-zsh
 
 .PHONY: python-install
 python-install:
@@ -20,8 +20,8 @@ python-install:
 oh-my-zsh:
 	if [ ! -d ~/.oh-my-zsh ]; then \
 		sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; \
-		chmod +x ~/.oh-my-zsh/tools/upgrade.sh; \
 	else; \
+		chmod +x ~/.oh-my-zsh/tools/upgrade.sh; \
 		sh -c "~/.oh-my-zsh/tools/upgrade.sh"; \
 	fi;
 		
