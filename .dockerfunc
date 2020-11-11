@@ -95,13 +95,13 @@ audacity(){
 		--name audacity \
 		${DOCKER_REPO_PREFIX}/audacity
 }
-aws(){
-	docker run -it --rm \
-		-v "${HOME}/.aws:/root/.aws" \
-		--log-driver none \
-		--name aws \
-		${DOCKER_REPO_PREFIX}/awscli "$@"
-}
+#aws(){
+#	docker run -it --rm \
+#		-v "${HOME}/.aws:/root/.aws" \
+#		--log-driver none \
+#		--name aws \
+#		${DOCKER_REPO_PREFIX}/awscli "$@"
+#}
 az(){
 	docker run -it --rm \
 		-v "${HOME}/.azure:/root/.azure" \
