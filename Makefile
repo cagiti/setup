@@ -24,5 +24,14 @@ oh-my-zsh:
 		chmod +x ~/.oh-my-zsh/tools/upgrade.sh; \
 		sh -c "~/.oh-my-zsh/tools/upgrade.sh"; \
 	fi;
-		
 
+.PHONY: dotfiles
+dotfiles:
+	# add aliases for dotfiles
+	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".git" -not -name ".config" -not -name ".github" -not -name ".*.swp" -not -name ".gnupg"); do \
+		f=$$(basename $$file); \
+		if [[ ! -L $(HOME)/$$f && -f $(HOME)/$$f ]]; then \
+			mv $(HOME)/$$f $(HOME)/$${f}.old; \
+		fi; \
+		ln -sfn $$file $(HOME)/$$f; \
+	done; \

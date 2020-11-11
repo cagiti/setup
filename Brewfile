@@ -280,6 +280,9 @@ tap 'buo/cask-upgrade'
   brew 'zsh-lovers'
   # Fish shell like syntax highlighting for zsh
   brew 'zsh-syntax-highlighting'
+  # Powerlevel10k is a theme for Zsh
+  brew 'romkatv/powerlevel10k/powerlevel10k'
+
 #}}}
 
 ### Virtualization {{{
