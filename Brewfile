@@ -236,6 +236,11 @@ tap 'buo/cask-upgrade'
 
   # GitHub workflow
   brew 'hub'
+
+  ## Developer workflow
+  # dx
+  tap 'plumming/homebrew-tap'
+  brew 'dx'
 ### }}}
 
 
