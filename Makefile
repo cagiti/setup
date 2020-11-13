@@ -1,7 +1,7 @@
 SHELL := zsh
 
 .PHONY: setup
-setup: brewfile configure
+setup: brewfile configure dotfiles
 
 .PHONY: brewfile
 brewfile:
@@ -11,7 +11,7 @@ brewfile:
 	fi;
 
 .PHONY: configure
-configure: python-install oh-my-zsh dotfiles
+configure: python-install oh-my-zsh terraform
 
 .PHONY: check
 check:
@@ -42,3 +42,7 @@ dotfiles:
 		fi; \
 		ln -sfn $$file $(HOME)/$$f; \
 	done; \
+
+.PHONY: terraform
+terraform:
+	tfenv install 0.11.11
