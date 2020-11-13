@@ -165,6 +165,8 @@ tap 'buo/cask-upgrade'
   brew 'postgresql'
   # Command-line interface for SQLite
   brew 'sqlite'
+  # MySQL Client
+  brew 'mysql-client'
 ### }}}
 
 ### Programming Language {{{
