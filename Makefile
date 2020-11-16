@@ -51,4 +51,4 @@ dotfiles:
 
 .PHONY: terraform
 terraform:
-	tfenv install 0.11.11
+	tfenv install 0.12.18
