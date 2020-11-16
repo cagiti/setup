@@ -1,5 +1,9 @@
 SHELL := zsh
 
+## Version information
+TERRAFORM_VERSION := 0.12.18
+
+
 .PHONY: setup
 setup: brewfile configure dotfiles
 
@@ -51,4 +55,5 @@ dotfiles:
 
 .PHONY: terraform
 terraform:
-	tfenv install 0.12.18
+	tfenv install $(TERRAFORM_VERSION)
+	tfenv use $(TERRAFORM_VERSION)
