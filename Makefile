@@ -21,8 +21,7 @@ check:
 
 .PHONY: python-install
 python-install:
-	pip3 install ansible \
-		     boto3 \
+	pip3 install boto3 \
 		     boto \
 		     botocore \
 		     python-dateutil \
