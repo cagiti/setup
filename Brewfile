@@ -290,6 +290,7 @@ tap 'buo/cask-upgrade'
   # Fish shell like syntax highlighting for zsh
   brew 'zsh-syntax-highlighting'
   # Powerlevel10k is a theme for Zsh
+  tap 'romkatv/powerlevel10k'
   brew 'romkatv/powerlevel10k/powerlevel10k'
 
 #}}}
@@ -313,6 +314,7 @@ tap 'buo/cask-upgrade'
   # Tool that can switch between kubectl contexts
   brew 'kubectx'
   # Jenkins-X cli
+  tap 'jenkins-x/jx'
   brew 'jenkins-x/jx/jx'
 
 # Tool for repeatable Kubernetes development
