@@ -1014,17 +1014,17 @@ termboy(){
 		--name termboy \
 		${DOCKER_REPO_PREFIX}/nes "/games/${game}.rom"
 }
-terraform(){
-	docker run -it --rm \
-		-v "${HOME}:${HOME}:ro" \
-		-v "$(pwd):/usr/src/repo" \
-		-v /tmp:/tmp \
-		--workdir /usr/src/repo \
-		--log-driver none \
-		-e GOOGLE_APPLICATION_CREDENTIALS \
-		-e SSH_AUTH_SOCK \
-		${DOCKER_REPO_PREFIX}/terraform "$@"
-}
+#terraform(){
+#	docker run -it --rm \
+#		-v "${HOME}:${HOME}:ro" \
+#		-v "$(pwd):/usr/src/repo" \
+#		-v /tmp:/tmp \
+#		--workdir /usr/src/repo \
+#		--log-driver none \
+#		-e GOOGLE_APPLICATION_CREDENTIALS \
+#		-e SSH_AUTH_SOCK \
+#		${DOCKER_REPO_PREFIX}/terraform "$@"
+#}
 tor(){
 	del_stopped tor
 

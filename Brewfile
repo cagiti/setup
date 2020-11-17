@@ -190,7 +190,7 @@ tap 'buo/cask-upgrade'
   # cask 'java'
   # An open and reproducible build & test system for OpenJDK
   # INFO: Need to install OpenJDK 8
-  cask 'adoptopenjdk8'
+  cask 'adoptopenjdk/openjdk/adoptopenjdk8'
   # Java build tool
   brew 'ant'
   # Java-based project management
