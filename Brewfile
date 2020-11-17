@@ -347,6 +347,12 @@ tap 'buo/cask-upgrade'
 ### }}}
 
 
+
+### Ansible {{{
+  # Automate deployment, configuration, and upgrading
+  brew 'ansible'
+### }}}
+
 ### Terraform {{{
   # Tool to generate documentation from Terraform modules
   brew 'terraform-docs'
