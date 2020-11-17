@@ -30,6 +30,8 @@ python-install:
 		     botocore \
 		     python-dateutil \
 		     pyhcl \
+		     pytest \
+		     testinfra \
 		     grep --user
 
 .PHONY: oh-my-zsh
