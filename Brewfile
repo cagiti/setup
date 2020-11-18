@@ -351,6 +351,8 @@ tap 'buo/cask-upgrade'
 ### Ansible {{{
   # Automate deployment, configuration, and upgrading
   brew 'ansible'
+  # Checks ansible playbooks for practices and behaviour
+  brew 'ansible-lint'
 ### }}}
 
 ### Terraform {{{
