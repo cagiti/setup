@@ -7,7 +7,7 @@ TERRAFORM_VERSION := 0.12.18
 init:
 	if [ ! -d /usr/local/sbin ]; then \
     sudo mkdir /usr/local/sbin; \
-    sudo chmod 775 /usr/local/sbin; \
+    sudo chmod 777 /usr/local/sbin; \
 	fi;
 
 .PHONY: setup
