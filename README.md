@@ -4,7 +4,9 @@
 
 ## Geting Started
 To setup using default configuration (_should be safe to run multiple times_):
+
 **NOTE: The `make setup` command **should** be safe to execute multiple times.**
+
 ```
 make setup
 ```
