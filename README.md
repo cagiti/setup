@@ -3,7 +3,7 @@
 ![CI](https://github.com/cagiti/setup/workflows/CI/badge.svg?branch=main&event=push)
 
 ## Geting Started
-To setup using default configuration (_should be safe to run multiple times_):
+To setup using default configuration:
 
 **NOTE: The `make setup` command **should** be safe to execute multiple times.**
 
