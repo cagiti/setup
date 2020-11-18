@@ -3,9 +3,15 @@ SHELL := zsh
 ## Version information
 TERRAFORM_VERSION := 0.12.18
 
+.PHONY: init
+init:
+	if [ ! -d /usr/local/sbin ]; then \
+		sudo mkdir /usr/local/sbin; \
+		sudo chmod 777 /usr/local/sbin; \
+	fi;
 
 .PHONY: setup
-setup: brewfile configure dotfiles
+setup: init brewfile configure dotfiles
 
 .PHONY: brewfile
 brewfile:
