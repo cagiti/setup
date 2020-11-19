@@ -1,7 +1,16 @@
 SHELL := zsh
-
+BREWFILE := Brewfile
 ## Version information
 TERRAFORM_VERSION := 0.12.18
+
+.PHONY: detect-issues
+detect-issues:
+	@for formula in $(shell brew list --unbrewed | egrep -v "xml|share" | sed 's/bin\///'); do \
+		if [ $$(grep -ci $$formula $(BREWFILE) || :) -gt 0 ]; then \
+			echo "'$$formula' has been instaled manually and therefore might cause brew to fail."; \
+			echo "We recommend removing '$$formula' before continuing with setup, thank you!"; \
+		fi; \
+	done
 
 .PHONY: init
 init:
@@ -15,9 +24,9 @@ setup: init brewfile configure dotfiles
 
 .PHONY: brewfile
 brewfile:
-	if [ -f Brewfile ]; then \
+	if [ -f $(BREWFILE) ]; then \
 		brew update; \
-		brew bundle install --file=Brewfile; \
+		brew bundle install --file=$(BREWFILE); \
 	fi;
 
 .PHONY: configure
@@ -25,8 +34,8 @@ configure: python-install oh-my-zsh terraform
 
 .PHONY: check
 check:
-	if [ -f Brewfile ]; then \
-		brew bundle check --file=Brewfile; \
+	if [ -f $(BREWFILE) ]; then \
+		brew bundle check --file=$(BREWFILE); \
 	fi;
 
 .PHONY: python-install

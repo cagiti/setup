@@ -62,7 +62,7 @@ tap 'buo/cask-upgrade'
   # Library for command-line editing
   brew 'readline'
   # Markdown editor
-  cask "typora"
+  cask 'typora'
 
   ## Mac OS X
   # Mac App Store command line interface
