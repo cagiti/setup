@@ -8,7 +8,7 @@ detect-issues:
 	@echo "---> attemptign to detect issues"; \
 	for formula in $(shell brew list --unbrewed | egrep -v "xml|share" | sed 's/bin\///'); do \
 		if [ $$(grep -ci $$formula $(BREWFILE) || :) -gt 0 ]; then \
-			echo "'$$formula' has been instaled manually and therefore might cause brew to fail."; \
+			echo "'$$formula' has been installed manually and therefore might cause brew to fail."; \
 			echo "We recommend removing '$$formula' before continuing with setup, thank you!"; \
 		fi; \
 	done
