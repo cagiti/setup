@@ -95,7 +95,7 @@ tap 'buo/cask-upgrade'
   cask 'docker'
 
   ## HTTP Request
-  # API Development Environment
+  # API Development Environmentaws
   cask 'postman'
   # The most advanced API tool for Mac
   cask 'paw'
@@ -373,6 +373,8 @@ tap 'buo/cask-upgrade'
   brew 'awscli'
   brew 'awslogs'
   brew 'aws-iam-authenticator'
+  # This tool will request and set temporary credentials in your shell environment variables for a given role.
+  brew 'remind101/formulae/assume-role'
 ### }}}
 
 
