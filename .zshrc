@@ -29,6 +29,8 @@ then
   fi
 fi
 
+# If you have a set of personal aliases separated out, load them in here
+[ -f ~/.custom_aliases ] && source ~/.custom_aliases
 
 ## completions
 # jx command completion
