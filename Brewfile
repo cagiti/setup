@@ -95,7 +95,7 @@ tap 'buo/cask-upgrade'
   cask 'docker'
 
   ## HTTP Request
-  # API Development Environmentaws
+  # API Development Environment
   cask 'postman'
   # The most advanced API tool for Mac
   cask 'paw'
