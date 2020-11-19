@@ -274,6 +274,8 @@ tap 'buo/cask-upgrade'
   brew 'exa'
   # Display directories as trees (with optional color/HTML output)
   brew 'tree'
+  # A simple, fast and user-friendly alternative to find
+  brew 'fd'
 
   ## Shell: Bash
   # Bourne-Again SHell, a UNIX command interpreter
