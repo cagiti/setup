@@ -373,6 +373,8 @@ tap 'buo/cask-upgrade'
   brew 'awscli'
   brew 'awslogs'
   brew 'aws-iam-authenticator'
+  # This tool will request and set temporary credentials in your shell environment variables for a given role.
+  brew 'remind101/formulae/assume-role'
 ### }}}
 
 
