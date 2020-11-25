@@ -375,7 +375,8 @@ tap 'buo/cask-upgrade'
   brew 'aws-iam-authenticator'
   # This tool will request and set temporary credentials in your shell environment variables for a given role.
   brew 'remind101/formulae/assume-role'
-
+  # Azure Binaries
+  brew 'azure-cli'
   # GCloud Libraries
   cask 'google-cloud-sdk'
 ### }}}
