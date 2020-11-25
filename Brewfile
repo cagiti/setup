@@ -377,6 +377,8 @@ tap 'buo/cask-upgrade'
   brew 'remind101/formulae/assume-role'
   # Azure Binaries
   brew 'azure-cli'
+  # GCloud Libraries
+  cask 'google-cloud-sdk'
 ### }}}
 
 
