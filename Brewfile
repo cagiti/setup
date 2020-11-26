@@ -291,9 +291,6 @@ tap 'buo/cask-upgrade'
   brew 'zsh-lovers'
   # Fish shell like syntax highlighting for zsh
   brew 'zsh-syntax-highlighting'
-  # Powerlevel10k is a theme for Zsh
-  tap 'romkatv/powerlevel10k'
-  brew 'romkatv/powerlevel10k/powerlevel10k'
 
 #}}}
 
@@ -396,29 +393,4 @@ tap 'buo/cask-upgrade'
   # A password manager
   brew 'lastpass-cli'
 
-### }}}
-
-### Font {{{
-  # XML-based font configuration API for X Windows
-  brew 'fontconfig'
-
-  ## Font Family: Icons
-  # Most popular icon toolkit
-  cask 'homebrew/cask-fonts/font-fontawesome'
-  # Simple and Minimal Line Icons
-  cask 'homebrew/cask-fonts/font-simple-line-icons'
-  # Material Design icons by Google
-  cask 'homebrew/cask-fonts/font-material-icons'
-  # An iconic font made for developers
-  cask 'homebrew/cask-fonts/font-devicons'
-  # WordPress admin icon font
-  cask 'homebrew/cask-fonts/font-dashicons'
-  # The premium icon font for Ionic Framework and web apps everywhere
-  cask 'homebrew/cask-fonts/font-ionicons'
-
-  ## Font Family: Powerline
-  cask 'homebrew/cask-fonts/font-consolas-for-powerline'
-  cask 'homebrew/cask-fonts/font-hack-nerd-font'
-  cask 'homebrew/cask-fonts/font-menlo-for-powerline'
-  cask 'homebrew/cask-fonts/font-meslo-for-powerline'
 ### }}}

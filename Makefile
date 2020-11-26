@@ -1,5 +1,6 @@
 SHELL := zsh
 BREWFILE := Brewfile
+BREWFILE_SHELL := Brewfile.shell
 ## Version information
 TERRAFORM_VERSION := 0.12.18
 
@@ -8,6 +9,11 @@ detect-issues:
 	@echo "---> attemptign to detect issues"; \
 	for formula in $(shell brew list --unbrewed | egrep -v "xml|share" | sed 's/bin\///'); do \
 		if [ $$(grep -ci $$formula $(BREWFILE) || :) -gt 0 ]; then \
+			echo "'$$formula' has been installed manually and therefore might cause brew to fail."; \
+			echo "We recommend removing '$$formula' before continuing with setup, thank you!"; \
+		fi; \
+		if [ $$(grep -ci $$formula $(BREWFILE_SHELL) || :) -gt 0 ]; then \
+			echo "** only relevant if you wish to customize your terminal prompt and configuration **"
 			echo "'$$formula' has been installed manually and therefore might cause brew to fail."; \
 			echo "We recommend removing '$$formula' before continuing with setup, thank you!"; \
 		fi; \
@@ -22,10 +28,10 @@ init:
 	fi;
 
 .PHONY: setup
-setup: init brewfile configure dotfiles
+setup: configure configure-shell
 
 .PHONY: brewfile
-brewfile:
+brewfile: init
 	@echo "---> installing via brew"; \
 	if [ -f $(BREWFILE) ]; then \
 		brew update; \
@@ -33,7 +39,8 @@ brewfile:
 	fi;
 
 .PHONY: configure
-configure: python-install oh-my-zsh terraform
+configure: brewfile python-install terraform
+
 
 .PHONY: check
 check:
@@ -53,6 +60,23 @@ python-install:
 		     pytest \
 		     testinfra \
 		     grep --user
+
+.PHONY: terraform
+terraform:
+	@echo "---> setting up terraform"; \
+	tfenv install $(TERRAFORM_VERSION); \
+	tfenv use $(TERRAFORM_VERSION)
+
+.PHONY: configure-shell
+configure-shell: brewfile-shell oh-my-zsh dotfiles
+
+.PHONY: brewfile-shell
+brewfile-shell: init
+	@echo "---> installing shell customisations via brew"; \
+	if [ -f $(BREWFILE_SHELL) ]; then \
+		brew update; \
+		brew bundle install --file=$(BREWFILE_SHELL); \
+	fi;
 
 .PHONY: oh-my-zsh
 oh-my-zsh:
@@ -76,8 +100,10 @@ dotfiles:
 		ln -sfn $$file $(HOME)/$$f; \
 	done; \
 
-.PHONY: terraform
-terraform:
-	@echo "---> setting up terraform"; \
-	tfenv install $(TERRAFORM_VERSION); \
-	tfenv use $(TERRAFORM_VERSION)
+.PHONY: check-shell
+check-shell:
+	@echo "---> checking brew install for shell customisation"; \
+	if [ -f $(BREWFILE_SHELL) ]; then \
+		brew bundle check --file=$(BREWFILE_SHELL); \
+	fi;
+
