@@ -32,6 +32,9 @@ fi
 # If you have a set of personal aliases separated out, load them in here
 [ -f ~/.custom_aliases ] && source ~/.custom_aliases
 
+# If you have a set of personal exported vars separated out, load them in here
+[ -f ~/.custom_exports ] && source ~/.custom_exports
+
 ## completions
 # jx command completion
 if [ $(command -v jx) ]
