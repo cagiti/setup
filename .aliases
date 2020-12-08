@@ -98,9 +98,6 @@ alias cp='cp -i'
 
 # k8s
 alias kc='kubectl'
-if alias ksd 2>/dev/null; then 
-  unalias ksd
-fi
 
 # move file interactive
 alias mv='mv -i'

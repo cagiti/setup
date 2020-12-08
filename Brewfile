@@ -312,6 +312,8 @@ tap 'buo/cask-upgrade'
   brew 'k9s'
   # Package manager for kubectl plugins
   brew 'krew'
+  # ksd is a tool, whose aim is help you to visualize in text plain your kubernetes secrets
+  brew 'mfuentesg/tap/ksd'
   # Tool that can switch between kubectl contexts
   brew 'kubectx'
   # Jenkins-X cli
