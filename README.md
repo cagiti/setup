@@ -101,3 +101,19 @@ The dotfiles used in this setup also enable `vi mode` on the command line using 
 We currently support two forms of customisation for the dotfiles provided:
 - `~/.custom_aliases`: add or unset any aliases
 - `~/.custom_exports`: add or unset any exports
+
+## Install golang
+
+There is a makefile target which installs [golang](https://golang.org/), to install:
+
+```sh
+❯ make golang
+---> downloading golang 1.15.5
+---> setting golang 1.15.5 as default
+---> please restart your terminal for the changes to take effect.
+```
+_These exports are set within the .path file which is part of the standard dotfiles. however grab them here if you them_
+```
+export GOROOT=$(realpath ~)/Development/golang/go
+export GOPATH = $(realpath ~)/Development/go-workspace
+```
