@@ -55,6 +55,7 @@ python-install:
 	pip3 install boto3 \
 		     boto \
 		     botocore \
+		     diagrams \
 		     python-dateutil \
 		     pyhcl \
 		     pytest \
