@@ -49,3 +49,8 @@ compinit
 # p10k customoisations
 typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile|kind|aws'
 typeset -g POWERLEVEL9K_TIME_FOREGROUND=160
+
+# Fixed issue #31 https://github.com/cagiti/setup/issues/31
+if alias ksd >/dev/null; then
+  unalias ksd
+fi
