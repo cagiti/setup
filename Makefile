@@ -55,6 +55,7 @@ python-install:
 	pip3 install boto3 \
 		     boto \
 		     botocore \
+		     diagrams \
 		     python-dateutil \
 		     pyhcl \
 		     pytest \
@@ -107,3 +108,22 @@ check-shell:
 		brew bundle check --file=$(BREWFILE_SHELL); \
 	fi;
 
+.PHONY: golang
+golang:
+	@mkdir -p $(GOLANG_HOME)/go$(GOLANG_VERSION); \
+	mkdir -p $(GO_WORKSPACE); \
+	if [ ! -d $(GOLANG_HOME)/go$(GOLANG_VERSION)/bin ]; then \
+		echo "---> downloading golang $(GOLANG_VERSION)"; \
+		curl -sL https://golang.org/dl/go$(GOLANG_VERSION).darwin-amd64.tar.gz -o "$(GOLANG_HOME)/go$(GOLANG_VERSION)/golang.tar.gz"; \
+		tar zxf $(GOLANG_HOME)/go$(GOLANG_VERSION)/golang.tar.gz --strip 1 -C $(GOLANG_HOME)/go$(GOLANG_VERSION); \
+		rm $(GOLANG_HOME)/go$(GOLANG_VERSION)/golang.tar.gz; \
+	fi; \
+	echo "---> setting golang $(GOLANG_VERSION) as default"; \
+	if [ ! -L $(GOLANG_HOME)/go ]; then \
+		ln -s $(GOLANG_HOME)/go$(GOLANG_VERSION) $(GOLANG_HOME)/go; \
+	fi; \
+	if $(shell command -v go &> /dev/null); then \
+		go version; \
+	else; \
+		echo "---> please restart your terminal for the changes to take effect."; \
+	fi

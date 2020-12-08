@@ -137,6 +137,8 @@ tap 'buo/cask-upgrade'
   brew 'coreutils'
   # Command-line fuzzy finder written in Go
   brew 'fzf'
+  # Graph visualization software from AT&T and Bell Labs
+  brew 'graphviz'
 
   ## Compress/Uncompress
   # 7-Zip (high compression file archiver) implementation
