@@ -13,3 +13,7 @@ make setup
 # checking envrionment
 echo "checking environment..."
 make check
+
+# check docker cli is available
+echo "checking docker cli..."
+docker --version >/dev/null && echo $?
