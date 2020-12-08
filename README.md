@@ -96,6 +96,16 @@ Another configuration item which is integral to the shell customisation is the u
 
 The dotfiles used in this setup also enable `vi mode` on the command line using `set -o vi`, if you wish to disable this try `set +o vi`. To see a full list of terminal modes use `set -o`.
 
+#### Kubernetes Context
+
+The kubernetes context is now visible within the right terminal status bar, to toggle this behaviour, use the `kube-toggle` function:
+
+```sh
+❯ kube-toggle
+```
+
+![kube-context](./img/kube_context_terminal.png)
+
 #### Customisation
 
 We currently support two forms of customisation for the dotfiles provided:
