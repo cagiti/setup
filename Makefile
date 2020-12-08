@@ -36,6 +36,7 @@ brewfile: init
 	if [ -f $(BREWFILE) ]; then \
 		brew update; \
 		brew bundle install --file=$(BREWFILE); \
+		brew link docker 2>/dev/null|| : ; \
 	fi;
 
 .PHONY: configure
