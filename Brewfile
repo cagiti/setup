@@ -63,6 +63,8 @@ tap 'buo/cask-upgrade'
   brew 'readline'
   # Markdown editor
   cask 'typora'
+  # Markdown viewer
+  brew 'glow'
 
   ## Mac OS X
   # Mac App Store command line interface
