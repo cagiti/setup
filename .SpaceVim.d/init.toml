@@ -1,0 +1,144 @@
+#=============================================================================-
+# dark_powered.toml --- dark powered configuration example for SpaceVim
+# Copyright (c) 2016-2020 Wang Shidong & Contributors
+# Author: Wang Shidong < wsdjeg at 163.com >
+# URL: https://spacevim.org
+# License: GPLv3
+#=============================================================================
+
+# All SpaceVim option below [option] section
+[options]
+	colorscheme = "molokai"
+    background = "dark"
+    default_indent = 4
+    # Disable guicolors in basic mode, many terminal do not support 24bit
+    # true colors
+    enable_guicolors = true
+    # Disable statusline separator, if you want to use other value, please
+    # install nerd fonts
+    statusline_separator = "arrow"
+    statusline_iseparator = "arrow"
+    statusline_inactive_separator = "arrow"
+    buffer_index_type = 4
+    enable_tabline_filetype_icon = true
+    enable_statusline_display_mode = false
+    enable_vimfiler_welcome = 0
+    enable_vimfiler_gitstatus = true
+    filemanager = "nerdtree"
+    filetree_direction = 'left'
+    sidebar_direction = 'left'
+    lint_on_the_fly = false
+    # Hybrid line numbering
+    number = true
+    relativenumber = true
+    project_rooter_outermost = false
+    bootstrap_before = "myspacevim#before"
+    bootstrap_after = "myspacevim#after"
+
+# Enable autocomplete layer
+[[layers]]
+name = 'autocomplete'
+spacevim_autocomplete_method = "depplete"
+auto-completion-return-key-behavior = "complete"
+auto-completion-tab-key-behavior = "smart"
+
+[[layers]]
+name = 'core'
+filetree_show_hidden = true
+
+[[layers]]
+name = 'shell'
+default_position = 'top'
+default_height = 30
+
+[[layers]]
+name = 'VersionControl'
+
+[[layers]]
+name = 'checkers'
+show_cursor_error = false
+
+[[layers]]
+name = 'format'
+
+[[layers]]
+name = 'colorscheme'
+
+[[layers]]
+name = 'git'
+
+[[layers]]
+name = 'github'
+
+[[layers]]
+name = 'tools'
+
+[[layers]]
+name = 'fzf'
+
+[[layers]]
+name = 'default'
+
+[[layers]]
+name = 'tmux'
+
+[[layers]]
+name = 'lang#go'
+
+[[layers]]
+ name = "lang#rust"
+
+[[layers]]
+name = 'lang#python'
+
+[[layers]]
+name = 'lang#javascript'
+
+[[layers]]
+name = 'lang#typescript'
+
+[[layers]]
+name = 'lang#sh'
+
+[[layers]]
+name = 'lang#html'
+
+[[layers]]
+name = 'lang#markdown'
+
+[[layers]]
+name = 'lang#json'
+
+[[layers]]
+name = 'lang#toml'
+
+[[layers]]
+name = 'lang#dockerfile'
+
+[[custom_plugins]]
+name = "lilydjwg/colorizer"
+merged = 0
+
+[[custom_plugins]]
+name = "docker/docker"
+merged = 0
+
+[[custom_plugins]]
+name = "chase/vim-ansible-yaml"
+merged = 0
+
+[[custom_plugins]]
+name = "martinda/jenkinsfile-vim-syntax"
+merged = 0
+
+[[custom_plugins]]
+name = "towolf/vim-helm"
+merged = 0
+
+[[custom_plugins]]
+name = "will133/vim-dirdiff"
+merged = 0
+
+[[custom_plugins]]
+name = "hashivim/vim-terraform"
+merged = 0
