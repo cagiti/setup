@@ -104,8 +104,6 @@ The kubernetes context is now visible within the right terminal status bar, to t
 ❯ kube-toggle
 ```
 
-![kube-context](./img/kube_context_terminal.png)
-
 #### Customisation
 
 We currently support two forms of customisation for the dotfiles provided:
