@@ -3,6 +3,7 @@ BREWFILE := Brewfile
 BREWFILE_SHELL := Brewfile.shell
 ## Version information
 TERRAFORM_VERSION := 0.12.18
+HELM_VERSIONS := latest:2 latest:3
 
 .PHONY: detect-issues
 detect-issues:
@@ -126,4 +127,15 @@ golang:
 		go version; \
 	else; \
 		echo "---> please restart your terminal for the changes to take effect."; \
+	fi
+
+.PHONY: setup-versions
+helm:
+	@if command -v asdf >/dev/null; then \
+		brew uninstall helm 2>/dev/null || true; \
+		asdf plugin-list | grep -iq helm || asdf plugin-add helm; \
+		for helm_version in $(HELM_VERSIONS); do \
+			asdf list helm | grep -iq $$helm_version || asdf install helm $$helm_version; \
+		done; \
+		echo "For information on how to select and use your required version of Helm, see the '#Setup Helm' section of the README"; \
 	fi

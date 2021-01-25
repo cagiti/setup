@@ -54,3 +54,6 @@ typeset -g POWERLEVEL9K_TIME_FOREGROUND=160
 if alias ksd >/dev/null; then
   unalias ksd
 fi
+
+# asdf
+command -v asdf 1>/dev/null && . /usr/local/opt/asdf/asdf.sh || echo "asdf is not installed"

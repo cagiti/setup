@@ -127,3 +127,63 @@ _These exports are set within the .path file which is part of the standard dotfi
 export GOROOT=$(realpath ~)/Development/golang/go
 export GOPATH = $(realpath ~)/Development/go-workspace
 ```
+
+## Setup Helm
+
+It's useful to have a straightforward approach to use the latest version where possible. [asdf](https://asdf-vm.com/) can be used to manage multiple versions of our runtime software.
+
+### Installing a version
+
+To install a version you require:
+
+1. Add the component plugin
+
+```
+❯ asdf plugin-add helm
+```
+
+2. Install a specific version
+
+```
+❯ asdf install helm 2.17.0
+```
+
+**OR**
+
+Execute the following makefile target:
+
+```
+❯ make helm
+```
+`asdf` **is configured to install the latest version of helm v2 and v3.**
+
+### List Versions
+
+To list versions of helm installed:
+
+```
+❯ asdf list helm
+  2.17.0
+  3.4.2
+  3.5.0
+```
+
+### Select a version to use
+
+#### Global
+
+`global` writes the version to `$HOME/.tool-versions`.
+
+```
+❯ asdf global helm 2.17.0
+```
+
+#### Local
+
+`local` writes the version to `$PWD/.tool-versions`, creating it if needed.
+
+```
+❯ asdf local helm 2.17.0
+```
+
+For more information see [asdf set current version](https://asdf-vm.com/#/core-manage-versions?id=set-current-version).
