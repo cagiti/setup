@@ -127,3 +127,18 @@ golang:
 	else; \
 		echo "---> please restart your terminal for the changes to take effect."; \
 	fi
+
+.PHONY: spacevim
+spacevim:
+		@echo "---> installing/updating spacevim"; \
+		curl -sLf https://spacevim.org/install.sh | bash; \
+		pip3 install --user pynvim; \
+		brew install --HEAD universal-ctags/universal-ctags/universal-ctags 2>/dev/null; \
+		if [ ! -L $(HOME)/.SpaceVim.d ]; then \
+				if [ -d $(HOME)/.SpaceVim.d ]; then \
+						echo "---> backing up current SpaceVim configuration"; \
+						mv $(HOME)/.SpaceVim.d $(HOME)/.SpaceVim.d_old; \
+				fi; \
+				echo "---> symbolically linking SpaceVim configuration"; \
+				ln -sfn $(realpath .SpaceVim.d) $(HOME)/.SpaceVim.d; \
+		fi
