@@ -280,6 +280,8 @@ tap 'buo/cask-upgrade'
   brew 'tree'
   # A simple, fast and user-friendly alternative to find
   brew 'fd'
+  # Manage multiple runtime versions with a single CLI tool
+  brew 'asdf'
 
   ## Shell: Bash
   # Bourne-Again SHell, a UNIX command interpreter
@@ -303,8 +305,6 @@ tap 'buo/cask-upgrade'
   ## Container
   # Kubernetes command-line interface
   brew 'kubernetes-cli'
-  # The Kubernetes package manager
-  brew 'kubernetes-helm'
   # Customization of kubernetes YAML configurations
   brew 'kustomize'
   # Tool that can switch between kubectl contexts easily and create aliases
