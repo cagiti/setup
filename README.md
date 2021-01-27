@@ -104,13 +104,29 @@ The kubernetes context is now visible within the right terminal status bar, to t
 ❯ kube-toggle
 ```
 
-![kube-context](./img/kube_context_terminal.png)
-
 #### Customisation
 
 We currently support two forms of customisation for the dotfiles provided:
 - `~/.custom_aliases`: add or unset any aliases
 - `~/.custom_exports`: add or unset any exports
+
+## Install SpaceVim
+
+The is a makefile target which installs and configures [SpaceVim](https://spacevim.org/). To install, execute the following:
+
+```sh
+❯ make spacevim
+```
+
+### Useful shortcuts for SpaceVim
+- `fn` + `F3` - toggles filetree panel `nerdtree`
+- `fn` + `F2` - toggles tagbar
+- `Ctrl` + `j` - move to below split
+- `Ctrl` + `k` - move to upper split
+- `Ctrl` + `h` - move to left split
+- `Ctrl` + `l` - move to right split
+
+See [use vim as an IDE](https://spacevim.org/use-vim-as-ide/) for more information.
 
 ## Install golang
 

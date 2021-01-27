@@ -7,14 +7,14 @@ HELM_VERSIONS := latest:2 latest:3
 
 .PHONY: detect-issues
 detect-issues:
-	@echo "---> attemptign to detect issues"; \
-	for formula in $(shell brew list --unbrewed | egrep -v "xml|share" | sed 's/bin\///'); do \
+	@echo "---> attempting to detect issues"; \
+	for formula in $(shell brew --prefix --unbrewed | egrep -v "xml|share" | sed 's/bin\///'); do \
 		if [ $$(grep -ci $$formula $(BREWFILE) || :) -gt 0 ]; then \
 			echo "'$$formula' has been installed manually and therefore might cause brew to fail."; \
 			echo "We recommend removing '$$formula' before continuing with setup, thank you!"; \
 		fi; \
 		if [ $$(grep -ci $$formula $(BREWFILE_SHELL) || :) -gt 0 ]; then \
-			echo "** only relevant if you wish to customize your terminal prompt and configuration **"
+			echo "** only relevant if you wish to customize your terminal prompt and configuration **"; \
 			echo "'$$formula' has been installed manually and therefore might cause brew to fail."; \
 			echo "We recommend removing '$$formula' before continuing with setup, thank you!"; \
 		fi; \
@@ -139,3 +139,18 @@ helm:
 		done; \
 		echo "For information on how to select and use your required version of Helm, see the '#Setup Helm' section of the README"; \
 	fi
+
+.PHONY: spacevim
+spacevim:
+		@echo "---> installing/updating spacevim"; \
+		curl -sLf https://spacevim.org/install.sh | bash; \
+		pip3 install --user pynvim; \
+		brew install --HEAD universal-ctags/universal-ctags/universal-ctags 2>/dev/null; \
+		if [ ! -L $(HOME)/.SpaceVim.d ]; then \
+				if [ -d $(HOME)/.SpaceVim.d ]; then \
+						echo "---> backing up current SpaceVim configuration"; \
+						mv $(HOME)/.SpaceVim.d $(HOME)/.SpaceVim.d_old; \
+				fi; \
+				echo "---> symbolically linking SpaceVim configuration"; \
+				ln -sfn $(realpath .SpaceVim.d) $(HOME)/.SpaceVim.d; \
+		fi

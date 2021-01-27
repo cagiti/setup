@@ -41,6 +41,10 @@ if [ $(command -v jx) ]
 then
   source <(jx completion zsh)
 fi
+if [ $(command -v dx) ]
+then
+  source <(dx completion zsh)
+fi
 compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
