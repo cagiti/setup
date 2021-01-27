@@ -6,14 +6,14 @@ TERRAFORM_VERSION := 0.12.18
 
 .PHONY: detect-issues
 detect-issues:
-	@echo "---> attemptign to detect issues"; \
-	for formula in $(shell brew list --unbrewed | egrep -v "xml|share" | sed 's/bin\///'); do \
+	@echo "---> attempting to detect issues"; \
+	for formula in $(shell brew --prefix --unbrewed | egrep -v "xml|share" | sed 's/bin\///'); do \
 		if [ $$(grep -ci $$formula $(BREWFILE) || :) -gt 0 ]; then \
 			echo "'$$formula' has been installed manually and therefore might cause brew to fail."; \
 			echo "We recommend removing '$$formula' before continuing with setup, thank you!"; \
 		fi; \
 		if [ $$(grep -ci $$formula $(BREWFILE_SHELL) || :) -gt 0 ]; then \
-			echo "** only relevant if you wish to customize your terminal prompt and configuration **"
+			echo "** only relevant if you wish to customize your terminal prompt and configuration **"; \
 			echo "'$$formula' has been installed manually and therefore might cause brew to fail."; \
 			echo "We recommend removing '$$formula' before continuing with setup, thank you!"; \
 		fi; \
