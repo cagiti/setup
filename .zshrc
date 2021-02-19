@@ -13,6 +13,12 @@ for file in ~/.{aliases,functions,path,exports}; do
 done
 unset file
 
+## gpg
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye
+unset SSH_AGENT_PID
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
 ## oh-my-zsh
 if [ ! -d $ZSH/custom/plugins/zsh-syntax-highlighting ] && [ -d $ZSH ]
 then
