@@ -15,6 +15,12 @@ tap 'homebrew/services'
 # INFO: brew cu
 tap 'buo/cask-upgrade'
 
+# Cloudfoundry binaries
+tap 'cloudfoundry/tap'
+
+# VMWare Tanzu binaries
+tap 'vmware-tanzu/carvel'
+
 ### System {{{
   ## System Libraries
   # GNU internationalization (i18n) and localization (l10n) library
@@ -159,6 +165,7 @@ tap 'buo/cask-upgrade'
   brew 'yj'
   brew 'yq'
   brew 'xmlstarlet'
+  brew 'ytt'
 
   # Tracks most-used directories to make cd smarter
   brew 'z'
@@ -321,6 +328,13 @@ tap 'buo/cask-upgrade'
   # Jenkins-X cli
   tap 'jenkins-x/jx'
   brew 'jenkins-x/jx/jx'
+
+  # Cloudfoundry command-line interface
+  brew 'cf-cli'
+  # BOSH command-line interface
+  brew 'bosh-cli'
+  # Credhub command-line interface
+  brew 'credhub-cli'
 
 # Tool for repeatable Kubernetes development
   brew 'skaffold'
