@@ -128,16 +128,62 @@ The is a makefile target which installs and configures [SpaceVim](https://spacev
 
 See [use vim as an IDE](https://spacevim.org/use-vim-as-ide/) for more information.
 
-## Install golang
+## Setup Golang
 
-There is a makefile target which installs [golang](https://golang.org/), to install:
+It's useful to have a straightforward approach to use the latest version where possible. [asdf](https://asdf-vm.com/) can be used to manage multiple versions of our runtime software.
 
-```sh
-❯ make golang
----> downloading golang 1.15.5
----> setting golang 1.15.5 as default
----> please restart your terminal for the changes to take effect.
+### Installing a version
+
+To install a version you require:
+
+1. Add the component plugin
+
 ```
+❯ asdf plugin-add golang
+```
+
+2. Install a specific version
+
+```
+❯ asdf install golang 1.14
+```
+
+**OR**
+
+Execute the following makefile target:
+
+```
+❯ make golang
+```
+
+### List Versions
+
+To list versions of golang installed:
+
+```
+❯ asdf list golang
+  1.15
+  1.16
+```
+
+### Select a version to use
+
+#### Global
+
+`global` writes the version to `$HOME/.tool-versions`.
+
+```
+❯ asdf global golang 1.16
+```
+
+#### Local
+
+`local` writes the version to `$PWD/.tool-versions`, creating it if needed.
+
+```
+❯ asdf local golang 1.16
+```
+
 _These exports are set within the .path file which is part of the standard dotfiles. however grab them here if you them_
 ```
 export GOROOT=$(realpath ~)/Development/golang/go

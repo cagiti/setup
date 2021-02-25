@@ -4,6 +4,7 @@ BREWFILE_SHELL := Brewfile.shell
 ## Version information
 TERRAFORM_VERSION := 0.12.18
 HELM_VERSIONS := latest:2 latest:3
+GO_VERSION := 1.16
 
 .PHONY: detect-issues
 detect-issues:
@@ -111,22 +112,11 @@ check-shell:
 
 .PHONY: golang
 golang:
-	@mkdir -p $(GOLANG_HOME)/go$(GOLANG_VERSION); \
-	mkdir -p $(GO_WORKSPACE); \
-	if [ ! -d $(GOLANG_HOME)/go$(GOLANG_VERSION)/bin ]; then \
-		echo "---> downloading golang $(GOLANG_VERSION)"; \
-		curl -sL https://golang.org/dl/go$(GOLANG_VERSION).darwin-amd64.tar.gz -o "$(GOLANG_HOME)/go$(GOLANG_VERSION)/golang.tar.gz"; \
-		tar zxf $(GOLANG_HOME)/go$(GOLANG_VERSION)/golang.tar.gz --strip 1 -C $(GOLANG_HOME)/go$(GOLANG_VERSION); \
-		rm $(GOLANG_HOME)/go$(GOLANG_VERSION)/golang.tar.gz; \
-	fi; \
-	echo "---> setting golang $(GOLANG_VERSION) as default"; \
-	if [ ! -L $(GOLANG_HOME)/go ]; then \
-		ln -s $(GOLANG_HOME)/go$(GOLANG_VERSION) $(GOLANG_HOME)/go; \
-	fi; \
-	if $(shell command -v go &> /dev/null); then \
-		go version; \
-	else; \
-		echo "---> please restart your terminal for the changes to take effect."; \
+	@if command -v asdf >/dev/null; then \
+		brew uninstall golang 2>/dev/null || true; \
+		asdf plugin-list | grep -iq golang || asdf plugin-add golang; \
+		asdf list golang | grep -iq $GO_VERSION || asdf install golang $GO_VERSION; \
+		echo "For information on how to select and use your required version of Golang, see the '#Setup Golang' section of the README"; \
 	fi
 
 .PHONY: setup-versions
