@@ -1,9 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
+export GOROOT="hello"
 # go root
-if [ -d /opt/golang ]
+if $(command -v asdf >/dev/null)
 then
-  export GOROOT="$(find /opt/golang -name "go1*" -type d -maxdepth 2 | head -1)"
+  export GOROOT=`asdf which go | sed 's:/bin/go::g'`
   export PATH="${GOROOT}/bin:${PATH}"
 fi
 
