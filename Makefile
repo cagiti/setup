@@ -115,8 +115,9 @@ golang:
 	@if command -v asdf >/dev/null; then \
 		brew uninstall golang 2>/dev/null || true; \
 		asdf plugin-list | grep -iq golang || asdf plugin-add golang; \
-		asdf list golang | grep -iq $GO_VERSION || asdf install golang $GO_VERSION; \
+		asdf list golang | grep -iq $(GO_VERSION) || asdf install golang $(GO_VERSION); \
 		echo "For information on how to select and use your required version of Golang, see the '#Setup Golang' section of the README"; \
+		asdf global golang $(GO_VERSION); \
 	fi
 
 .PHONY: setup-versions
