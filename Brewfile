@@ -410,4 +410,7 @@ tap 'vmware-tanzu/carvel'
   # A password manager
   brew 'lastpass-cli'
 
+  # 1Password password manager
+  cask '1password-cli'
+
 ### }}}
