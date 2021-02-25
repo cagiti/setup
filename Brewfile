@@ -122,6 +122,10 @@ tap 'vmware-tanzu/carvel'
   # Free software for OpenVPN on OS X
   cask 'tunnelblick'
 
+  ## DNS
+  # Command line DNS client https://dns.lookup.dog/
+  brew 'dog'
+
   ## Utility
   # User interface to the TELNET protocol
   brew 'telnet'
@@ -281,6 +285,8 @@ tap 'vmware-tanzu/carvel'
   ## Utility
   # Search tool like grep, but optimized for programmers
   brew 'ack'
+  # Search tool like grep and The Silver Searcher
+  brew 'ripgrep'
   # Modern replacement for `ls`
   brew 'exa'
   # Display directories as trees (with optional color/HTML output)
