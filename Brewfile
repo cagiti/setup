@@ -131,16 +131,7 @@ tap 'vmware-tanzu/carvel'
   brew 'telnet'
   # Graphical network analyzer and capture tool
   brew 'wireshark'
-  # Utility to display the output from any script or program in the menu bar
-  cask 'bitbar'
 ### }}}
-
-
-### Keyboard & Mouse {{{
-  # A simple utility application to trigger haptic feedback when tapping Touch Bar
-  cask 'haptickey'
-### }}}
-
 
 ### Utility {{{
   # Command-line benchmark tool
