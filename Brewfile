@@ -419,6 +419,9 @@ tap 'vmware-tanzu/carvel'
   # GNU Pretty Good Privacy (PGP) package
   brew 'gnupg'
 
+  # Tool for managing your YubiKey configuration
+  brew 'ykman'
+
   # Library access to GnuPG
   brew 'gpgme'
 
