@@ -206,11 +206,28 @@ tap 'vmware-tanzu/carvel'
   # Static analysis and lint tool, for (ba)sh scripts
   brew 'shellcheck'
 
+  ## Concourse related
+  # Integration-tests Concourse tasks
+  brew 'engineerbetter/tap/ironbird'
+  # Managed concourse
+  brew 'engineerbetter/tap/control-tower'
+
   ## Ruby
   # Powerful, clean, object-oriented scripting language
   brew 'ruby'
   brew 'rbenv'
   brew 'rbspy'
+### }}}
+
+### Secrets Management {{{
+  # AWS Vault is a tool to securely store and access AWS credentials
+  cask 'aws-vault'
+  # Credhub command-line interface
+  brew 'credhub-cli'
+  # Secures, stores, and tightly controls access to secrets
+  brew 'vault'
+  # Offers more cli functionality than vault
+  brew 'starkandwayne/cf/safe'
 ### }}}
 
 ### VCS {{{
@@ -330,8 +347,6 @@ tap 'vmware-tanzu/carvel'
   brew 'cf-cli'
   # BOSH command-line interface
   brew 'bosh-cli'
-  # Credhub command-line interface
-  brew 'credhub-cli'
 
 # Tool for repeatable Kubernetes development
   brew 'skaffold'
@@ -413,4 +428,16 @@ tap 'vmware-tanzu/carvel'
   # 1Password password manager
   cask '1password-cli'
 
+### }}}
+
+
+### Applications {{{
+  # Web browser focusing on privacy
+  cask 'brave-browser'
+  # Open source code editor
+  cask 'visual-studio-code'
+  # Team communication and collaboration software
+  cask 'slack'
+  # Video communication and virtual meeting platform
+  cask 'zoomus'
 ### }}}
