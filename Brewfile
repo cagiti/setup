@@ -440,4 +440,6 @@ tap 'vmware-tanzu/carvel'
   cask 'slack'
   # Video communication and virtual meeting platform
   cask 'zoomus'
+  # Voice and text chat software
+  cask 'discord'
 ### }}}
