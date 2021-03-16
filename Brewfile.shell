@@ -9,6 +9,8 @@
 
 
 ### Terminal {{{
+  # GPU-accelerated terminal emulator
+  cask 'alacritty'
   # Powerlevel10k is a theme for Zsh
   tap 'romkatv/powerlevel10k'
   brew 'romkatv/powerlevel10k/powerlevel10k'
