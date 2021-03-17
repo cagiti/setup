@@ -442,7 +442,7 @@ tap 'vmware-tanzu/carvel'
   # Team communication and collaboration software
   cask 'slack'
   # Video communication and virtual meeting platform
-  cask 'zoomus'
+  cask 'zoom'
   # Voice and text chat software
   cask 'discord'
 ### }}}
