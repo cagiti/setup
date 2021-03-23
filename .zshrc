@@ -43,6 +43,8 @@ fi
 # If you have a set of personal exported vars separated out, load them in here
 [ -f ~/.custom_exports ] && source ~/.custom_exports
 
+# If you have a set of personal functions, load them in here
+[ -f ~/.custom_functions ] && source ~/.custom_functions
 ## completions
 # jx command completion
 if [ $(command -v jx) ]

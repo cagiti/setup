@@ -40,4 +40,5 @@
   cask 'homebrew/cask-fonts/font-hack-nerd-font'
   cask 'homebrew/cask-fonts/font-menlo-for-powerline'
   cask 'homebrew/cask-fonts/font-meslo-for-powerline'
+  cask 'homebrew/cask-fonts/font-monoid-nerd-font'
 ### }}}
