@@ -16,7 +16,7 @@ done
 unset file
 
 ## gpg
-export GPG_TTY=$(tty)
+export GPG_TTY=$TTY
 gpg-connect-agent updatestartuptty /bye
 unset SSH_AGENT_PID
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
