@@ -4,7 +4,7 @@ BREWFILE_SHELL := Brewfile.shell
 ## Version information
 TERRAFORM_VERSION := 0.12.18
 HELM_VERSIONS := latest:2 latest:3
-GO_VERSION := 1.16
+GO_VERSION := 1.17
 
 .PHONY: detect-issues
 detect-issues:
